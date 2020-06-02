@@ -10,7 +10,7 @@
 |password|string|null:false| 
 ### Association
 - has_many:tweets
-- has_many:groups through: :posts_tags
+- has_many:groups through: :tweets_groups
 
 
 ## tweetsテーブル
@@ -18,8 +18,8 @@
 |------|----|-------|
 |image|text|null:false|
 |text|text|null:false|
-|user_id|integer|null:faise,foreign_key:true|
-|group_id|interger|null:false'foreign_key:true|
+|user_id|integer|null:false,foreign_key:true|
+|group_id|integer|null:false'foreign_key:true|
 ### Association
 - belongs_to:user
 - belongs_to:group
