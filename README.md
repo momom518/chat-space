@@ -10,7 +10,7 @@
 |password|string|null:false| 
 ### Association
 - has_many:tweets
-- has_many:groups through: :tweets_groups
+- has_many:groups through: :users_groups
 
 
 ## tweetsテーブル
@@ -36,14 +36,14 @@
 - has_many:tweets 
 
 
-## tweets_groupsテーブル
+## users_groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|tweet_id|integer|null:false,foreign_key:true|
+|user_id|integer|null:false,foreign_key:true|
 |group_id|integer|null:false,foreign_key:true|
 ### Association
 - has_many:users
-- has_many:tweets
+- has_many:groups
 
 
 
