@@ -10,14 +10,15 @@
 |password|string|null:false| 
 ### Association
 - has_many:tweets
+- has-many:users_groups
 - has_many:groups through: :users_groups
 
 
 ## tweetsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|text|null:false|
-|text|text|null:false|
+|image|text||
+|text|text||
 |user_id|integer|null:false,foreign_key:true|
 |group_id|integer|null:false'foreign_key:true|
 ### Association
@@ -29,10 +30,9 @@
 |Column|Type|Options|
 |------|----|-------|
 |group|string|null:false|
-|user_id|integer|null:false,foreign_key:true|
-|tweet_id|integer|null:false,foreign_key:true|
 ### Association
-- has_many:users through: :tweets_groups
+- has many:users_groups
+- has_many:users through: :users_groups
 - has_many:tweets 
 
 
@@ -42,8 +42,8 @@
 |user_id|integer|null:false,foreign_key:true|
 |group_id|integer|null:false,foreign_key:true|
 ### Association
-- has_many:users
-- has_many:groups
+- belongs_to:users
+- belongs_to:groups
 
 
 
