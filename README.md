@@ -29,7 +29,7 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group|string|null:false|
+|group|string|null:false,unique:true|
 ### Association
 - has many:users_groups
 - has_many:users through: :users_groups
@@ -42,8 +42,8 @@
 |user_id|integer|null:false,foreign_key:true|
 |group_id|integer|null:false,foreign_key:true|
 ### Association
-- belongs_to:users
-- belongs_to:groups
+- belongs_to:user
+- belongs_to:group
 
 
 
