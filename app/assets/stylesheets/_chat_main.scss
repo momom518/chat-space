@@ -1,22 +1,26 @@
+//よく使う色を変数に代入
+$info_color:#ffffff;
+$message_color:#fafafa;
+$sky_blue:#38aef0;
+$gray_font:#999999;
+
 .chat_main{
   width:calc(100vw - 300px);
-  background-color: #fafafa;
+  background-color: $message_color;
   &__groupInfo{
     height:100px;
-    background-color: #ffffff;
+    background-color: $info_color;
     display:flex;
     justify-content:space-between;
 
     &__leftHeader{
       &__group_name{
-        color:#333333;
         font-size: 20px;
         padding-top:35px;
         padding-left:40px;
-        
         }
       &__member{
-        color:#999999;
+        color:$gray_font;
         font-size: 12px;
         padding-top: 15px;
         padding-left:40px;
@@ -29,18 +33,18 @@
       
     }
     &__rightHeader{
-      color:#38aef0;
+      color:$sky_blue;
       margin-top:28px;
       margin-right:40px;
-      border:1px solid #38aef0;
+      border:1px solid $sky_blue;
       height:40px;
       width:72px;
       text-align: center;
       line-height: 40px;
       a{
-        color:#38aef0;
+        color:$sky_blue;
         text-decoration:none;
-        background-color: #fafafa;
+        background-color: $info_color;
       }
 
       
@@ -50,7 +54,7 @@
 
   .chat_main__message_list{
     height:calc(100vh - 225px);
-    background-color: #fafafa;
+    background-color: $message_color;
     margin-top:35px;
     margin-left:40px;
 
@@ -62,10 +66,11 @@
         padding-bottom:12px;
         &__name{
           font-size:16px;
+          font-weight: bold;
         }
         &__timestamp{
           font-size: 12px;
-          color:#999999;
+          color:$gray_font;
           padding-left:10px;
         }
       }
@@ -77,10 +82,10 @@
   }
       
   .chat_main__messageForm{
-    background-color: #d2d2d2;
+    background-color: #dddddd;
     height:90px;
     justify-content: space-between;
-    padding:20px 40px 20px 50px;
+    padding:20px 50px 20px 40px;
     &__newMessage{
       display: flex;
       justify-content:space-between;
@@ -109,15 +114,15 @@
           }
         }
       &__send{
-        background-color: #38aef0;
+        background-color: $sky_blue;
         color:#ffffff;
-        background-color: #38aef0;
+        background-color: $sky_blue;
         border:none;
         font-size:16px ;
         height:50px;
         line-height: 50px;
         padding:0 30px;
-        margin-left: 10px;
+        margin-left: 15px;
         display:flex;
         flex-direction: column;
       }

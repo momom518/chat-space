@@ -1,7 +1,12 @@
+//よく使う色を変数に代入
+$user_color:#253141;
+$group_color:#2f3e51;
+
+$white_font:#ffffff;
+
 .side_bar{
   width:300px;
-  background-color: #253141;
-
+  background-color: $user_color;
   &__user{
     display:flex;
     justify-content: center;
@@ -9,26 +14,26 @@
     height:100px;
 
     &__name_box{
-      color:#253141;
       font-size: 16px;
       height:20px;
       width:260px;
-      background-color: #253141;
+      background-color: $user_color;
       display:flex;
       justify-content: space-between;
 
       &__user_name{
-        color:#ffffff;
+        color:$white_font;
         line-height:20px;
+        font-weight: bold;
         }
       
       &__icons{
         &__edit{
-          color:#ffffff;
+          color:$white_font;
         }
         &__gear{
           margin-left:5px;
-          color:#ffffff;
+          color:$white_font;
         }
       }
       }
@@ -38,7 +43,7 @@
   
 
   &__group_list{
-    background-color: #2f3e51;
+    background-color: $group_color;
     height:calc(100vh - 100px);
     &__group{
       height:91px;
@@ -46,13 +51,13 @@
       
       &__name{
         font-size: 15px;
-        color:#ffffff;
+        color:$white_font;
         
         padding:20px 20px 5px 20px;
       }
       &__message{
         font-size: 11px;
-        color: #ffffff;
+        color: $white_font;
 
         padding :0px 20px 40px 20px;
       }
