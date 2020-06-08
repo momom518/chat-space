@@ -1,0 +1,126 @@
+.chat_main{
+  width:calc(100vw - 300px);
+  background-color: #fafafa;
+  &__groupInfo{
+    height:100px;
+    background-color: #ffffff;
+    display:flex;
+    justify-content:space-between;
+
+    &__leftHeader{
+      &__group_name{
+        color:#333333;
+        font-size: 20px;
+        padding-top:35px;
+        padding-left:40px;
+        
+        }
+      &__member{
+        color:#999999;
+        font-size: 12px;
+        padding-top: 15px;
+        padding-left:40px;
+        display:flex;
+        &__name{
+          margin-left:5px;
+          font-size: 12px;
+        }
+      }
+      
+    }
+    &__rightHeader{
+      color:#38aef0;
+      margin-top:28px;
+      margin-right:40px;
+      border:1px solid #38aef0;
+      height:40px;
+      width:72px;
+      text-align: center;
+      line-height: 40px;
+      a{
+        color:#38aef0;
+        text-decoration:none;
+        background-color: #fafafa;
+      }
+
+      
+    }
+
+    }
+
+  .chat_main__message_list{
+    height:calc(100vh - 225px);
+    background-color: #fafafa;
+    margin-top:35px;
+    margin-left:40px;
+
+    &__message{
+      padding-bottom:46px;
+      
+      &__info{
+        display:flex;
+        padding-bottom:12px;
+        &__name{
+          font-size:16px;
+        }
+        &__timestamp{
+          font-size: 12px;
+          color:#999999;
+          padding-left:10px;
+        }
+      }
+      &__text{
+        color:#434A54;
+        font-size:14px;
+      }
+    }
+  }
+      
+  .chat_main__messageForm{
+    background-color: #d2d2d2;
+    height:90px;
+    justify-content: space-between;
+    padding:20px 40px 20px 50px;
+    &__newMessage{
+      display: flex;
+      justify-content:space-between;
+    }
+      .inputBox{
+        display:flex;
+        justify-content: space-between;
+        position:relative;
+        width:100%;
+        height:50px;
+        
+        &__text{
+          border:none;
+          height:50px;
+          width:100%;
+          padding-left:10px;
+          }
+        &__image{
+          position:absolute;
+          right:10px;
+          line-height:50px;
+          font-size: 25px;
+          &__file{
+            display:none;
+            }
+          }
+        }
+      &__send{
+        background-color: #38aef0;
+        color:#ffffff;
+        background-color: #38aef0;
+        border:none;
+        font-size:16px ;
+        height:50px;
+        line-height: 50px;
+        padding:0 30px;
+        margin-left: 10px;
+        display:flex;
+        flex-direction: column;
+      }
+    }
+  
+}
