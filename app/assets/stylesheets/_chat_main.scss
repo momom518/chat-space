@@ -46,11 +46,8 @@ $gray_font:#999999;
         text-decoration:none;
         background-color: $info_color;
       }
-
-      
     }
-
-    }
+  }
 
   .chat_main__message_list{
     height:calc(100vh - 225px);
@@ -80,7 +77,6 @@ $gray_font:#999999;
       }
     }
   }
-      
   .chat_main__messageForm{
     background-color: #dddddd;
     height:90px;
@@ -125,7 +121,6 @@ $gray_font:#999999;
         margin-left: 15px;
         display:flex;
         flex-direction: column;
-      }
     }
-  
+  }
 }

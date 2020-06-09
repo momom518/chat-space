@@ -1,7 +1,6 @@
 //よく使う色を変数に代入
 $user_color:#253141;
 $group_color:#2f3e51;
-
 $white_font:#ffffff;
 
 .side_bar{
@@ -30,18 +29,14 @@ $white_font:#ffffff;
       &__icons{
         &__edit{
           color:$white_font;
-        }
+          }
         &__gear{
           margin-left:5px;
           color:$white_font;
+          }
         }
       }
-      }
-
     }
-  
-  
-
   &__group_list{
     background-color: $group_color;
     height:calc(100vh - 100px);
@@ -52,16 +47,13 @@ $white_font:#ffffff;
       &__name{
         font-size: 15px;
         color:$white_font;
-        
         padding:20px 20px 5px 20px;
       }
       &__message{
         font-size: 11px;
         color: $white_font;
-
         padding :0px 20px 40px 20px;
       }
     }
-    
   }
 }
