@@ -1,0 +1,49 @@
+.chat_main
+  .chat_main__groupInfo
+    .chat_main__groupInfo__leftHeader
+      .chat_main__groupInfo__leftHeader__group_name
+        test
+      %ul.chat_main__groupInfo__leftHeader__member
+        Member : 
+        %li.chat_main__groupInfo__leftHeader__member__name
+          masa
+    .chat_main__groupInfo__rightHeader
+      = link_to'Edit','#' 
+        
+
+  .chat_main__message_list
+    .chat_main__message_list__message
+      .chat_main__message_list__message__info
+        .chat_main__message_list__message__info__name
+          masa
+        .chat_main__message_list__message__info__timestamp
+          2020/06/07 16:49
+      .chat_main__message_list__message__text
+        Hello!!  
+    
+    .chat_main__message_list__message
+      .chat_main__message_list__message__info
+        .chat_main__message_list__message__info__name
+          masa
+        .chat_main__message_list__message__info__timestamp
+          2020/06/07 16:49
+      .chat_main__message_list__message__text
+        morning! 
+
+    .chat_main__message_list__message
+      .chat_main__message_list__message__info
+        .chat_main__message_list__message__info__name
+          masa
+        .chat_main__message_list__message__info__timestamp
+          2020/06/07 16:49
+      .chat_main__message_list__message__text
+        bye!!!
+
+  .chat_main__messageForm
+    %form.chat_main__messageForm__newMessage
+      .inputBox
+        %input{type:"text",class:"inputBox__text",placeholder:'type a message'}
+        %label.inputBox__image
+          =icon('far','image')
+          %input{type:'file',class:'inputBox__image__file'}
+      %input.chat_main__messageForm__send{type:'submit',value:"Send"}
