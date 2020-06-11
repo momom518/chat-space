@@ -5,31 +5,18 @@
         =current_user.name
       .side_bar__user__name_box__icons
         
-        = link_to edit_user_path(current_user),class:"side_bar__user__name_box__icons__edit" do
+        = link_to new_group_path, class:"side_bar__user__name_box__icons__edit" do
           =icon("fas","edit", class:"side_bar__user__name_box__icons__edit")
           %span<>
           
-        = link_to "#",class:"side_bar__user__name_box__icons__gear" do
+        = link_to edit_user_path(current_user),class:"side_bar__user__name_box__icons__gear" do
           =icon('fas','cog',class:"side_bar__user__name_box__icons__gear")
 
   .side_bar__group_list
-    .side_bar__group_list__group
-      .side_bar__group_list__group__name
-        techcamp1
-      .side_bar__group_list__group__message
-        まだメッセージがありません
-
-      .side_bar__group_list__group__name
-        techcamp2
-      .side_bar__group_list__group__message
-        まだメッセージがありません
-
-      .side_bar__group_list__group__name
-        techcamp3
-      .side_bar__group_list__group__message
-        まだメッセージがありません
-
-      .side_bar__group_list__group__name
-        techcamp4
-      .side_bar__group_list__group__message
-        まだメッセージがありません
+    - current_user.groups.each do |g|
+      .side_bar__group_list__group
+        = link_to '#' do
+          .side_bar__group_list__group__name
+            = g.group
+          .side_bar__group_list__group__message
+            まだメッセージがありません
