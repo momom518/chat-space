@@ -1,5 +1,7 @@
 .chat_main{
   width:calc(100vw - 300px);
+  // height:100vh;
+
   background-color: $message_color;
   &__groupInfo{
     height:100px;
@@ -42,12 +44,16 @@
       }
     }
   }
-
-  .chat_main__message_list{
+  .messages {
+    overflow:scroll;
     height:calc(100vh - 225px);
     background-color: $message_color;
     margin-top:35px;
     margin-left:40px;
+  }
+  .chat_main__message_list{
+   
+    
 
     &__message{
       padding-bottom:46px;
@@ -103,18 +109,18 @@
             }
           }
         }
-      &__send{
-        background-color: $sky_blue;
-        color:#ffffff;
-        background-color: $sky_blue;
-        border:none;
-        font-size:16px ;
-        height:50px;
-        line-height: 50px;
-        padding:0 30px;
-        margin-left: 15px;
-        display:flex;
-        flex-direction: column;
+    &__send{
+      background-color: $sky_blue;
+      color:#ffffff;
+      background-color: $sky_blue;
+      border:none;
+      font-size:16px ;
+      height:50px;
+      line-height: 50px;
+      padding:0 30px;
+      margin-left: 15px;
+      display:flex;
+      flex-direction: column;
     }
   }
 }

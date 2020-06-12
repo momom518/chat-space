@@ -2,7 +2,7 @@
   .side_bar__user
     .side_bar__user__name_box
       .side_bar__user__name_box__user_name
-        =current_user.name
+        = current_user.name
       .side_bar__user__name_box__icons
         
         = link_to new_group_path, class:"side_bar__user__name_box__icons__edit" do
@@ -13,10 +13,10 @@
           =icon('fas','cog',class:"side_bar__user__name_box__icons__gear")
 
   .side_bar__group_list
-    - current_user.groups.each do |g|
+    - current_user.groups.each do |group|
       .side_bar__group_list__group
-        = link_to '#' do
+        = link_to group_messages_path(group) do
           .side_bar__group_list__group__name
-            = g.group
+            = group.group
           .side_bar__group_list__group__message
-            まだメッセージがありません
+            = group.show_last_message
