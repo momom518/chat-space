@@ -35,6 +35,7 @@
   &__group_list{
     background-color: $group_color;
     height:calc(100vh - 100px);
+    overflow:scroll;
     &__group{
       height:91px;
       width:300px;
