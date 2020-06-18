@@ -15,18 +15,6 @@
   .messages
     = render @messages
 
-
-  
-
-  -# .chat_main__messageForm
-  -#   =form_with model: [@group, @message], html: {class: "chat_main__messageForm__newMessage"}, local: true do |f|
-  -#     .inputBox
-  -#       = f.text_field :content, class: 'inputBox__text', placeholder: 'type a message'
-  -#       = f.label :image, class: 'inputBox__image' do
-  -#         =icon('far','image')
-  -#         = f.file_field :image, class: 'inputBox__image__file'
-  -#       = f.submit 'Send', class: 'chat_main__messageForm__send'
-
   .chat_main__messageForm
     =form_with model: [@group, @message], html: {class: "chat_main__messageForm__newMessage"}, local: true do |f|
       .inputBox
