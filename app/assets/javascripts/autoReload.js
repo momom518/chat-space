@@ -1,8 +1,7 @@
-$(function(){
-  function buildHTML(message){
-    if (message.image){
-      let html = 
-      `
+function buildHTML(message){
+  if (message.image){
+    let html = 
+    `<div class="chat_main__message_list" data-message-id=${message.id}>
       <div class="chat_main__message_list__message">
         <div class="chat_main__message_list__message__info">
           <div class="chat_main__message_list__message__info__name">
@@ -19,13 +18,15 @@ $(function(){
           <img class="chat_main__message_list__message__text__image" src="${message.image}">
         </div>
       </div>
-      `
-      
-      return html;
+    </div>  
+    `
+    
+    return html;
 
-    }else{
-      let html = 
-      `<div class="chat_main__message_list__message">
+  }else{
+    let html = 
+    `<div class="chat_main__message_list" data-message-id=${message.id}>
+      <div class="chat_main__message_list__message">
         <div class="chat_main__message_list__message__info">
           <div class="chat_main__message_list__message__info__name">
               ${message.user_name}
@@ -40,33 +41,31 @@ $(function(){
           </p>
         </div>
       </div>
-      `
-      return html;
-    }
+    </div>
+    `
+    return html;
   }
-  $('.chat_main__messageForm__newMessage').on("submit",function(e){
-    e.preventDefault();
-    let formData = new FormData(this)
-    let url = $(this).attr('action')
-
-    $.ajax({
-      url:url,
-      type: 'POST',
-      data: formData,
-      dataType:'json',
-      processData: false,
-      contentType: false
-    })
-
-    .done(function(data){
-      let html = buildHTML(data);
-      $('.messages').append(html);
-      $('.chat_main__messageForm__newMessage')[0].reset();
-      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-      $('.chat_main__messageForm__send').prop('disabled', false);
-    })
-    .fail(function() {
-      alert("メッセージ送信に失敗しました");
-    });
+}
+let reloadMessages = function() {
+  let last_message_id = $('.chat_main__message_list:last').data("message-id");
+  $.ajax({
+    url: "api/messages",
+    type: 'get',
+    dataType: 'json',
+    data: {id: last_message_id}
   })
-})
+  .done(function(messages) {
+    if (messages.length !== 0) {
+      let insertHTML = '';
+      $.each(messages, function(i, message) {
+        insertHTML += buildHTML(message)
+      });
+      $('.messages').append(insertHTML);
+      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+    }
+  })
+  .fail(function() {
+    alert('error');
+  });
+};
+setInterval(reloadMessages, 7000);
