@@ -39,17 +39,20 @@
     &__group{
       height:91px;
       width:300px;
+      a{
+        text-decoration: none;
+        .side_bar__group_list__group__name{
+          font-size: 15px;
+          color:$white_font;
+          padding:20px 20px 5px 20px;
+        }
+        .side_bar__group_list__group__message{
+          font-size: 11px;
+          color: $white_font;
+          padding :0px 20px 40px 20px;
+        }
+      }
       
-      &__name{
-        font-size: 15px;
-        color:$white_font;
-        padding:20px 20px 5px 20px;
-      }
-      &__message{
-        font-size: 11px;
-        color: $white_font;
-        padding :0px 20px 40px 20px;
-      }
     }
   }
 }
